@@ -37,7 +37,13 @@ namespace GoFish.Tests
       List<Game> result = Game.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
-    // [TestMethod]
-    // public void
+    [TestMethod]
+    public void GetGame_ReturnsGameById_Game()
+    {
+      Game game1 = new Game();
+      Game game2 = new Game();
+      Game query = Game.Find(1);
+      Assert.AreEqual(game1, query);
+    }
   }
 }
