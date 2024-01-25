@@ -32,8 +32,13 @@ Create Player   | /game/:id/player/                                      | POST 
 Player Goes Fish| /game/:id/player/:id/fish/player/:id/card/:id          | POST  | Within a game a player fishes a card off another player, if the player has the card, it is removed from their hand, put in players hand                |
 Delete Player   | /game/:id/player/:id/delete                            | GET   | Removes a player on the server                    |
 
-
-
+* Status
+- Logic fully tested
+- Splash page complete
+- Can start game, create 2 players by name
+* Unfinished
+- Button to activate deal to players
+- Game Actions, Game over scenario.
 
 ### Technologies Used
 
