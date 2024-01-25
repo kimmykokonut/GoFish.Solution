@@ -6,13 +6,13 @@ namespace GoFish.Models
     public List<int> Hand { get; set; } = new List<int> {};
     
     public int Books = 0;
-    //public int Id { get; }
+    public int Id { get; }
     private static List<Player> _instances = new List<Player> { };
     public Player(string name)
     {
       Name = name;
       _instances.Add(this);
-      //Id = _instances.Count;
+      Id = _instances.Count;
       
     }
     public static List<Player> GetAll()
