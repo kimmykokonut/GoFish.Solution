@@ -2,9 +2,8 @@ namespace GoFish.Models
 {
   public class Game
   {
-    
-    
     private List<int> _deck;
+
     public List<int> Deck { 
       get { return _deck;} 
     }
@@ -54,6 +53,12 @@ namespace GoFish.Models
         hand.Add(DrawCard(i));
       }
       return hand;
+    }
+
+    public int RandomCard()
+    {
+      Random random = new();
+      return random.Next(Deck.Count);
     }
   }
 }

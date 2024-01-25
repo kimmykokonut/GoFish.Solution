@@ -66,5 +66,15 @@ namespace GoFish.Tests
       List<int> expectedHand = new(){ 1, 2, 3, 4, 5, 6, 7 };
       CollectionAssert.AreEqual(hand, expectedHand);
     }
+    public void RandomCard_ReturnsRandomInt_Int()
+    {
+      Game testGame = new Game();
+
+      for (int i=0; i < testGame.Deck.Count; i++)
+      {
+        int randomNum = testGame.RandomCard();
+        Assert.IsTrue(randomNum >= 0 && randomNum < testGame.Deck.Count);
+      }
+    }
   }
 }
