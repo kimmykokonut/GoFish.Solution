@@ -9,12 +9,13 @@ namespace GoFish.Models
     }
     private static List<Game> _instances = new List<Game> {};
     public int Id { get; }
-    //public List<Player> Players { get; }
+    public List<Player> Players { get; set; }
     public Game()
     {
       _deck = NewDeck();
       _instances.Add(this);
       Id = _instances.Count;
+      Players = new List<Player> { };
     }
     
     public static List<int> NewDeck()
@@ -58,6 +59,10 @@ namespace GoFish.Models
     public static Game Find(int id)
     {
       return _instances[id - 1];
+    }
+    public void AddPlayer(Player player)
+    {
+      Players.Add(player);
     }
   }
 }

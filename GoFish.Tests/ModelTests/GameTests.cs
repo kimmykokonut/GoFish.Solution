@@ -77,5 +77,15 @@ namespace GoFish.Tests
         Assert.IsTrue(randomNum >= 0 && randomNum < testGame.Deck.Count);
       }
     }
+    public void AddPlayer_AssociatePlayerWithGame_PlayerList()
+    {
+      string name = "Frank";
+      Player newPlayer = new Player(name);
+      List<Player> newList = new List<Player> { newPlayer };
+      Game newGame = new Game();
+      newGame.AddPlayer(newPlayer);
+      List<Player> result = newGame.Players;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
