@@ -4,8 +4,12 @@ using GoFish.Models;
 namespace GoFish.TestTools
 {
   [TestClass]
-  public class PlayerTests
+  public class PlayerTests : IDisposable
   {
+    public void Dispose()
+    {
+      Player.ClearAll();
+    }
     [TestMethod]
     public void PlayerConstructo_CreatesInstanceOfGame_Game()
     {
@@ -48,6 +52,13 @@ namespace GoFish.TestTools
       newPlayer.Hand = updatedHand;
       List<int> expectedHand = newPlayer.Hand;
       CollectionAssert.AreEqual(updatedHand, expectedHand);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_PlayerList()
+    {
+      List<Player> newList = new List<Player> { };
+      List<Player> result = Player.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
