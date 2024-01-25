@@ -59,5 +59,12 @@ namespace GoFish.Tests
       CollectionAssert.AreEqual(game3.Deck, expectedRemainingDeck);
       Assert.AreEqual(card, 5);
     }
+    public void DealHand_ReturnsPlayerHand_List()
+    {
+      Game game1 = new Game();
+      List<int> hand = game1.DealHand();
+      List<int> expectedHand = new(){ 1, 2, 3, 4, 5, 6, 7 };
+      CollectionAssert.AreEqual(hand, expectedHand);
+    }
   }
 }
