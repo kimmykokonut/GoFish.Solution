@@ -20,5 +20,15 @@ namespace GoFish.TestTools
       string result = newPlayer.Name;
       Assert.AreEqual(name, result);
     }
+    [TestMethod]
+    public void SetName_SetName_String()
+    {
+      string name = "Xena";
+      Player newPlayer = new Player(name);
+      string updatedName = "Gabrielle";
+      newPlayer.Name = updatedName;
+      string result = newPlayer.Name;
+      Assert.AreEqual(updatedName, result);
+    }
   }
 }
