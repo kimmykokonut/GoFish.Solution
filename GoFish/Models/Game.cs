@@ -27,10 +27,12 @@ namespace GoFish.Models
         1, 2, 3, 4, 5 , 6 , 7 , 8, 9, 10, 11, 12, 13
         };
     }
-    public int DrawCard(int? seed)
+    public int DrawCard(int index)
     {
-
-    // }
+      int card = Deck[index];
+      Deck.RemoveAt(index);
+      return card;
+    }
     // public List<int> DealHand(int amount)
     // {
 
