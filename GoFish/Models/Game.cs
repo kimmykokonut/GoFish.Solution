@@ -2,13 +2,14 @@ namespace GoFish.Models
 {
   public class Game
   {
+    
+    private List<int> _deck;
     public List<int> Deck { 
-      get; 
-      set; 
+      get { return _deck;} 
     }
     public Game()
     {
-      Deck = NewDeck();
+      _deck = NewDeck();
     }
     
     public static List<int> NewDeck()
