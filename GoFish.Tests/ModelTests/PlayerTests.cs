@@ -9,8 +9,16 @@ namespace GoFish.TestTools
     [TestMethod]
     public void PlayerConstructo_CreatesInstanceOfGame_Game()
     {
-    Player newPlayer = new Player();
-    Assert.AreEqual(typeof(Player), newPlayer.GetType());
+      Player newPlayer = new Player("Xena");
+      Assert.AreEqual(typeof(Player), newPlayer.GetType());
+    }
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      string name = "Xena";
+      Player newPlayer = new Player(name);
+      string result = newPlayer.Name;
+      Assert.AreEqual(name, result);
     }
   }
 }

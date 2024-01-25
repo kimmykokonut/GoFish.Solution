@@ -2,10 +2,10 @@ namespace GoFish.Models
 {
   public class Player
   {
-    //string Name { get; set; }
-    public Player()
+    public string Name { get; }
+    public Player(string name)
     {
-
+      Name = name;
     }
   }
   
