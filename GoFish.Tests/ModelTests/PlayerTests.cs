@@ -77,5 +77,15 @@ namespace GoFish.TestTools
       int result = newPlayer.Id;
       Assert.AreEqual(1, result);
     }
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      string name1 = "Kramer";
+      string name2 = "Newman";
+      Player newPlayer1 = new Player(name1);
+      Player newPlayer2 = new Player(name2);
+      Player result = Player.Find(2);
+      Assert.AreEqual(newPlayer2, result);
+    }
   }
 }

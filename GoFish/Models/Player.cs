@@ -23,10 +23,10 @@ namespace GoFish.Models
     {
       _instances.Clear();
     }
-    // public static Player Find(int searchId)
-    // {
-    //   return _instances[searchId - 1]; 
-    // }
+    public static Player Find(int searchId)
+    {
+      return _instances[searchId - 1]; 
+    }
 
   }
 
