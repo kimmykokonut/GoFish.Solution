@@ -1,9 +1,9 @@
-namespace ProjectName.Models //change name
+namespace GoFish.Models 
 {
-  public class ClassName //change name
+  public class Game
   {
     //properties here
-    public ClassName()
+    public Game()
     {
       //properties here
     }

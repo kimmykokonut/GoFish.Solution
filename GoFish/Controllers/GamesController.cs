@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models; //change
+using GoFish.Models; 
 using System.Collections.Generic;
 
-namespace ProjectName.Controllers
+namespace GoFish.Controllers
 {
-  public class ClassNameSController : Controller
+  public class GamesController : Controller
   {
 
   }

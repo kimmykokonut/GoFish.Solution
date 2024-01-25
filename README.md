@@ -1,7 +1,7 @@
-# ProjectName
+# Go Fish
 _by Kim Robinson & Henry Oberholtzer_
 
-## Description
+## Build 2 player Go Fish game using C# .Net Core Mvc with full CRUD
 
 ###  This app will allow a user to:
     - Win a game by collecting the most "books" of cards (four of a kind)
@@ -22,15 +22,15 @@ _by Kim Robinson & Henry Oberholtzer_
     - > Name
     - > Score
 
-Index           | /game                         | GET   | Shows all games in progress                       |
-New Game        | /game/new                     | GET   | Offers a form to create a new game                |
-Create Game     | /game/                        | POST  | Creates the game on the server                    |
-Show Game State | /game/:id                     | GET   | Shows the current status of the game              |
-Deal Cards      | /game/:id/deal                | POS   | Deals cards to all players in the game            |
-New Game Player | /game/:id/player/new          | GET   | Offers a form to create a new player for the game |
-Create Player   | /game/:id/player/             | POST  | Creates the player on the server                  |
-Create Player   | /game/:id/player/:id          | POST  | Creates the player on the server                  |
-Delete Player   | /game/:id/player/:id/delete   | GET   | Removes a player on the server                    |
+Index           | /game                                                  | GET   | Shows all games in progress                       |
+New Game        | /game/new                                              | GET   | Offers a form to create a new game                |
+Create Game     | /game/                                                 | POST  | Creates the game on the server                    |
+Show Game State | /game/:id                                              | GET   | Shows the current status of the game              |
+Deal Cards      | /game/:id/deal                                         | POST  | Deals cards to all players in the game            |
+New Game Player | /game/:id/player/new                                   | GET   | Offers a form to create a new player for the game |
+Create Player   | /game/:id/player/                                      | POST  | Creates the player on the server                  |
+Player Goes Fish| /game/:id/player/:id/fish/player/:id/card/:id          | POST  | Within a game a player fishes a card off another player, if the player has the card, it is removed from their hand, put in players hand                |
+Delete Player   | /game/:id/player/:id/delete                            | GET   | Removes a player on the server                    |
 
 
 
@@ -44,6 +44,9 @@ Delete Player   | /game/:id/player/:id/delete   | GET   | Removes a player on th
 * .Net
 * Git
 * NuGet package with dotnet CLI
+* CRUD
+* RESTful Routing
+* Razor
 
 ## Setup/Installation Requirements
 
