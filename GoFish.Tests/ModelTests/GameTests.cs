@@ -62,9 +62,9 @@ namespace GoFish.Tests
     public void DealHand_ReturnsPlayerHand_List()
     {
       Game game1 = new Game();
-      List<int> hand = game1.DealHand();
+      List<int> hand = game1.DealHand(7);
       List<int> expectedHand = new(){ 1, 2, 3, 4, 5, 6, 7 };
-      CollectionAssert.AreEqual(hand, expectedHand);
+      Assert.AreEqual(hand.Count, expectedHand.Count);
     }
     public void RandomCard_ReturnsRandomInt_Int()
     {

@@ -32,6 +32,21 @@ namespace GoFish.Models
       Deck.RemoveAt(index);
       return card;
     }
+    public List<int> DealHand(int amount)
+    {
+      List<int> hand = new(){};
+      for (int i = 0; i < amount; i++)
+      {
+        hand.Add(DrawCard(RandomCard()));
+      }
+      return hand;
+    }
+
+    public int RandomCard()
+    {
+      Random random = new();
+      return random.Next(Deck.Count);
+    }
     public static void ClearAll()
     {
       _instances.Clear();
@@ -43,22 +58,6 @@ namespace GoFish.Models
     public static Game Find(int id)
     {
       return _instances[id - 1];
-    }
-    public List<int> DealHand()
-    {
-      
-      List<int> hand = new(){};
-      for (int i = 0; i < 7; i++)
-      {
-        hand.Add(DrawCard(i));
-      }
-      return hand;
-    }
-
-    public int RandomCard()
-    {
-      Random random = new();
-      return random.Next(Deck.Count);
     }
   }
 }
