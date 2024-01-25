@@ -3,13 +3,19 @@ namespace GoFish.Models
   public class Game
   {
     
+    
     private List<int> _deck;
     public List<int> Deck { 
       get { return _deck;} 
     }
+    private static List<Game> _instances = new List<Game> {};
+    //public int Id { get; }
+    //public List<Player> Players { get; }
     public Game()
     {
       _deck = NewDeck();
+      _instances.Add(this);
+      //Id = _instances.Count;
     }
     
     public static List<int> NewDeck()
@@ -29,5 +35,14 @@ namespace GoFish.Models
     // {
 
     // }
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+    public static List<Game> GetAll()
+    {
+      return _instances;
+    }
+    //find by id
   }
 }
