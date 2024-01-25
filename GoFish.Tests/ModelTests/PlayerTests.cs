@@ -30,5 +30,14 @@ namespace GoFish.TestTools
       string result = newPlayer.Name;
       Assert.AreEqual(updatedName, result);
     }
+    [TestMethod]
+    public void GetHand_ReturnsHand_List()
+    {
+      string name = "Xena";
+      Player newPlayer = new Player(name);
+      List<int> playerHand = newPlayer.Hand;
+      List<int> expectedHand = new();
+      CollectionAssert.AreEqual(playerHand, expectedHand);
+    }
   }
 }
