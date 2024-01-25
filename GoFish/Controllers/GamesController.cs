@@ -17,12 +17,15 @@ namespace GoFish.Controllers
     {
       return View();
     }
-    [HttpPost("/games")]
-    public ActionResult Create()
+    [HttpPost("/games/")]
+    public ActionResult Create(string p1Name, string p2Name)
     {
-      Game newGame = new Game();
-      return RedirectToAction("Index"); //? 
-    } //no input to start game...
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Game newGame = new Game(p1Name, p2Name);
+      RouteValueDictionary route = new(){{"id", newGame.Id}};
+      return RedirectToAction("Show", route);  
+    }
+    
     [HttpGet("/games/{id}")]
     public ActionResult Show(int id)
     {
@@ -33,5 +36,15 @@ namespace GoFish.Controllers
       model.Add("players", gamePlayer);
       return View(model);
     }
+  [HttpPost("/games/{id}/deal")]
+  public ActionResult Deal(int id)
+  {
+    Game selectedGame = Game.Find(id);
+    selectedGame.DealHand(7);
+    RouteValueDictionary route = new(){{"id", id}};
+    return RedirectToAction("Show", route);  
+  }
+
+    //want to stay on this page: /games/{id}/
   }
 }

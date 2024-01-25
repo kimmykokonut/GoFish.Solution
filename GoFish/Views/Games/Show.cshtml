@@ -4,13 +4,39 @@
 
 @using GoFish.Models;
 <h3>Players in this game:</h3>
-<ul>
+
   @foreach (Player player in @Model["players"])
   {
-    <li><a href='/games/@Model["game"].Id/players/@player.Id'>@player.Name </a></li>
+    <h4><a href='/games/@Model["game"].Id/players/@player.Id'>@player.Name </a></h4>
+    <p>Current Books: @player.Books</p>
+    @* <p>Hand: 
+      <ul>
+  @foreach (Player player in @Model card)
+      <li>@player.Hand</li>
+      </ul>
+      </p> *@
   }
-</ul>
 
-<button><a href='games/@Model["game"].Id/players/new'>Add a new player</a></button>
-<button><a href='/games'>Return to game list?</a></button>
-<button><a href='/'>Return to Main page</a></button>
+<hr />
+<p>Let's play! *Dynamic Game directions here?*</p>
+
+
+<form action='/games/@Model["game"].Id/deal' method="post">
+  <button type="submit">Deal hands to players</button>
+</form>
+
+<hr />
+<h4>Dynamic player #? ask for a card...</h4>
+<h4>Dynamic player #? auto give card if exists, or go fish...</h4>
+
+<h4>go fish button?</h4>
+@* 
+@if (@Model.Deck.Count == 0)
+{
+  <h4>Game over. Player ?? wins. Scores</h4>
+} *@
+
+
+@* <button><a href='/games/@Model["game"].Id/players/new'>Add a new player</a></button> *@
+<button><a href='/games'>Return to game list</a></button>
+<button><a href='/'>Play new game (main page)</a></button>

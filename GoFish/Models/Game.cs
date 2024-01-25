@@ -10,12 +10,12 @@ namespace GoFish.Models
     private static List<Game> _instances = new List<Game> {};
     public int Id { get; }
     public List<Player> Players { get; set; }
-    public Game()
+    public Game(string name, string name2)
     {
       _deck = NewDeck();
       _instances.Add(this);
       Id = _instances.Count;
-      Players = new List<Player> { };
+      Players = new List<Player> { new Player(name), new Player(name2) };
     }
     
     public static List<int> NewDeck()
@@ -33,14 +33,16 @@ namespace GoFish.Models
       Deck.RemoveAt(index);
       return card;
     }
-    public List<int> DealHand(int amount)
+    public void DealHand(int amount)
     {
-      List<int> hand = new(){};
-      for (int i = 0; i < amount; i++)
-      {
-        hand.Add(DrawCard(RandomCard()));
+      foreach (Player player in Players) {
+        List<int> hand = new(){};
+        for (int i = 0; i < amount; i++)
+        {
+          hand.Add(DrawCard(RandomCard()));
+        }
+        player.Hand = hand;
       }
-      return hand;
     }
 
     public int RandomCard()
@@ -60,9 +62,6 @@ namespace GoFish.Models
     {
       return _instances[id - 1];
     }
-    public void AddPlayer(Player player)
-    {
-      Players.Add(player);
-    }
+
   }
 }

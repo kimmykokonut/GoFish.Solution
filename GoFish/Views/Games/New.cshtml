@@ -2,10 +2,18 @@
   Layout = "_Layout";
 }
 
-<h1>Start a new game</h1>
+<h1>Start a new game</h1> 
+
 <form action="/games" method="post">
+<!-- <input id="gameId" name="gameId" type="hidden" value="> -->
+<label for="p1Name">Player 1 Name</label>
+<input id="p1Name" name="p1Name" type="text">
+  <label for="p2Name">Player 2 Name</label>
+  <input id="p2Name" name="p2Name" type="text">
 <button type="submit">Begin</button>
 </form>
+@* button submit sends post to GameController and routes to games list currently.a
+want player name input to post to PlayerController and route to game board page? *@
 
 <button><a href="/">go home</a></button>
 <button><a href="/games">games list (needed?)</a></button>
