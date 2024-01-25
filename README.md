@@ -1,21 +1,39 @@
-## Template for ASP.NET Core MVC web application
-
-* set up project files, folders, and configure a host
-
-### Setup
-* Make sure parent directory is ProjectName.Solution
-* Change file names as necessary
-* commit .gitignore first
-
-----------------
-Readme from C# Console App- toupdate
 # ProjectName
-_by Kim Robinson_
+_by Kim Robinson & Henry Oberholtzer_
 
 ## Description
 
 ###  This app will allow a user to:
-    - 
+    - Win a game by collecting the most "books" of cards (four of a kind)
+    - Draw cards from a deck of 52, based on a standard 52 card deck.
+        - Card deck should be "shuffleable", which is to say drawable at random
+    - Players are dealed hands of seven
+    - Any group of four of a kind can be marked as book, and this is checked and saved in the player
+    - Player can request card of a specific type from their opponent
+    - If the opponent does not have a the card, the player gets a card from the deck.
+    - Play repeats until all cards have been drawn and the player with the most four of a kind wins
+
+### Structure
+- Game
+    - > Deck, initializes with 52 cards
+    - > DealCards, (random?)
+- Player
+    - > Hand
+    - > Name
+    - > Score
+
+Index           | /game                         | GET   | Shows all games in progress                       |
+New Game        | /game/new                     | GET   | Offers a form to create a new game                |
+Create Game     | /game/                        | POST  | Creates the game on the server                    |
+Show Game State | /game/:id                     | GET   | Shows the current status of the game              |
+Deal Cards      | /game/:id/deal                | POS   | Deals cards to all players in the game            |
+New Game Player | /game/:id/player/new          | GET   | Offers a form to create a new player for the game |
+Create Player   | /game/:id/player/             | POST  | Creates the player on the server                  |
+Create Player   | /game/:id/player/:id          | POST  | Creates the player on the server                  |
+Delete Player   | /game/:id/player/:id/delete   | GET   | Removes a player on the server                    |
+
+
+
 
 ### Technologies Used
 
