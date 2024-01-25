@@ -65,6 +65,7 @@ namespace GoFish.Tests
       List<int> hand = game1.DealHand(7);
       List<int> expectedHand = new(){ 1, 2, 3, 4, 5, 6, 7 };
       Assert.AreEqual(hand.Count, expectedHand.Count);
+      Assert.AreEqual(game1.Deck.Count, 52 - 7);
     }
     public void RandomCard_ReturnsRandomInt_Int()
     {
