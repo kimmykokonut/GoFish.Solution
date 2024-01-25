@@ -60,5 +60,14 @@ namespace GoFish.TestTools
       List<Player> result = Player.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsItems_ItemList()
+    {
+      Player newPlayer1 = new Player("George");
+      Player newPlayer2 = new Player("Jerry");
+      List<Player> newList = new List<Player> { newPlayer1, newPlayer2 };
+      List<Player> result = Player.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
