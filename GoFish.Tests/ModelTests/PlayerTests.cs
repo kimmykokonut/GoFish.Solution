@@ -87,5 +87,15 @@ namespace GoFish.TestTools
       Player result = Player.Find(2);
       Assert.AreEqual(newPlayer2, result);
     }
+    [TestMethod]
+    public void MakeBook_TakesHandConvertsToBook_Void()
+    {
+      Player puddy = new Player("Puddy");
+      puddy.Hand = new List<int>(){4, 3, 3, 2, 3, 3};
+      List<int> expected = new List<int>(){2, 4};
+      puddy.MakeBook();
+      Assert.AreEqual(puddy.Books, 1);
+      CollectionAssert.AreEqual(expected, puddy.Hand);
+    }
   }
 }

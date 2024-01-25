@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjectName.Controllers //change name
+namespace GoFish.Controllers 
 {
   public class HomeController : Controller
   {

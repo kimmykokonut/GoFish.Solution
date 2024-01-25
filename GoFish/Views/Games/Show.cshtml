@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@using GoFish.Models;
+<h3>Players in this game:</h3>
+<ul>
+  @foreach (Player player in @Model["players"])
+  {
+    <li><a href='/games/@Model["game"].Id/players/@player.Id'>@player.Name </a></li>
+  }
+</ul>
+
+<button><a href='games/@Model["game"].Id/players/new'>Add a new player</a></button>
+<button><a href='/games'>Return to game list?</a></button>
+<button><a href='/'>Return to Main page</a></button>
